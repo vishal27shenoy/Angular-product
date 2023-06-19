@@ -1,0 +1,48 @@
+<div class="add_product_container">
+    <div class="header_container">
+        <div class="table_heading">
+            <div>ID</div>
+            <div>Title</div>
+            <div>Description</div>
+            <div>Cost</div>
+            <div>Action</div>
+        </div>
+        <button class="add_product" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add</button>
+    </div>
+    <div class="item_display_container">
+        <div class="iteration" *ngFor="let val of item;let i = index;">
+            <div class="display_item_container">
+                <div>{{i}}</div>
+                <div>{{val.title}}</div>
+                <div>{{val.desc}}</div>
+                <div>{{val.cost}}</div>
+                <div class="update_and_delete">
+                    <button class="update" (click)="EditItem(i)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">E</button>
+                    <button class="delete" (click)="DeleteItem(i)">D</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Enter Product Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="form" class="d-flex flex-column gap-3">
+                        <input type="text" class="title" placeholder="Title" formControlName="title">
+                            <input type="text" class="description" placeholder="Description" formControlName="desc">
+                                <input type="text" class="cost" placeholder="Cost" formControlName="cost"></form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="AddItem()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>

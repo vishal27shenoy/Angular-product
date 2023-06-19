@@ -1,0 +1,14 @@
+.navbar_container{
+    height: 60px;
+    min-width: 100vh;
+    max-width:calc(100vw);
+    background-color: #1f2c34; 
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+}
+.navbar_title{
+    margin-left: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
